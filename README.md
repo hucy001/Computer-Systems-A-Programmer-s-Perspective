@@ -3,7 +3,6 @@
 符号表.symtab的每个连接符号包含两个属性：作用域和存放位置
 
 #### 符号的作用域
-1. 模块作用域
 11. 文件作用域 local
 12. 函数作用域 local
 13. 全局作用域 global
@@ -31,29 +30,29 @@ static double l_bbs; // 文件作用域 bbs段
 double g_data=1.0; // 全局作用域 data段
 static double l_data=2.0; // 文件作用域 data段
 
-// 全局作用域 text段
-void f_test(int)
-{
-  static int l_f_bbs; // 函数作用域 bbs段
-  static int l_f_bbs_0=0; // 函数作用域 bbs段
-  static int l_f_data=20; // 函数作用域 data段
-}
+// 全局作用域 text段  
+void f_test(int)  
+{  
+  static int l_f_bbs; // 函数作用域 bbs段  
+  static int l_f_bbs_0=0; // 函数作用域 bbs段  
+  static int l_f_data=20; // 函数作用域 data段  
+}  
 
-// 文件作用域 text段
-static void g_test(double)
-{
-}
+// 文件作用域 text段  
+static void g_test(double)  
+{  
+}  
 
-// 全局作用域 text段
-int main()
-{
-  static int l_bbs; // 函数作用域 bbs段
-  const static int l_rodata= 11; // 函数作用域 rodata段
+// 全局作用域 text段  
+int main()  
+{  
+  static int l_bbs; // 函数作用域 bbs段  
+  const static int l_rodata= 11; // 函数作用域 rodata段  
 
-  f_test(1);
-  g_test(1.9);
+  f_test(1);  
+  g_test(1.9);  
 
-  printf("hello world\n");
-}
+  printf("hello world\n");  
+}  
 (···)
 
