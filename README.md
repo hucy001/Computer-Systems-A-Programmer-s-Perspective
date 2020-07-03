@@ -16,7 +16,7 @@
 
 
 #### 代码
-、、、
+(```)
 include "stdio.h"
 
 ifdef __cplusplus
@@ -55,5 +55,5 @@ int main()
 
   printf("hello world\n");
 }
-、、、
+(```)
 
