@@ -16,17 +16,17 @@
 
 
 #### 代码
-(···)
-include "stdio.h"
+(···)  
+include "stdio.h"  
 
-ifdef __cplusplus
-extern "C" {
-endif
+ifdef __cplusplus  
+extern "C" {  
+endif  
 
-const double l_rodata=0; // 文件作用域 rodata段
-double g_bbs; // 全局作用域 bbs段
-const static double l_rodata_s=1.0; // 文件作用域 rodata段
-static double l_bbs; // 文件作用域 bbs段
+const double l_rodata=0; // 文件作用域 rodata段  
+double g_bbs; // 全局作用域 bbs段  
+const static double l_rodata_s=1.0; // 文件作用域 rodata段  
+static double l_bbs; // 文件作用域 bbs段  
 
 double g_data=1.0; // 全局作用域 data段
 static double l_data=2.0; // 文件作用域 data段
