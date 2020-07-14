@@ -13,8 +13,8 @@
 3. bbs  ： 初始化值为0或者未初始化的全局或静态变量
 4. rodata ： 所有的常量
 
-#### 示例代码
-···c
+#### 示例代码  
+```c
 include "stdio.h"  
 
 ifdef __cplusplus  
@@ -55,9 +55,10 @@ int main()
 }  
 ```
 
-#### 使用readelf工具查看符号表
+#### 使用readelf工具查看符号表  
 1. 编译可执行文件: gcc -o test test.cpp
 2. 查看段信息： readelf -S test  
+
 ```c
 Section Headers:  
   [Nr] Name              Type             Address           Offset  
@@ -74,7 +75,8 @@ Section Headers:
        000000000000002d  0000000000000001  MS       0     0     1  
   [27] .symtab           SYMTAB           0000000000000000  00001080  
        0000000000000720  0000000000000018          28    56     8  
-```
+```  
+
 3. 查看变量信息: readelf -s test|grep "OBJECT"  
 ```c
     28: 0000000000600e20     0 OBJECT  LOCAL  DEFAULT   20 __JCR_LIST__  
@@ -99,7 +101,7 @@ Section Headers:
     66: 0000000000400600     4 OBJECT  GLOBAL DEFAULT   15 _IO_stdin_used  
     67: 0000000000601058     8 OBJECT  GLOBAL DEFAULT   25 g_bbs  
     74: 0000000000601050     0 OBJECT  GLOBAL HIDDEN    24 __TMC_END__  
-```
+```  
 4. 查看函数信息: readelf -s test|grep "FUNC"  
 ```c
      1: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND puts@GLIBC_2.2.5 (2)  
